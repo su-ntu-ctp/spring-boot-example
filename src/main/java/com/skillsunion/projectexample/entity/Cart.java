@@ -1,10 +1,13 @@
 package com.skillsunion.projectexample.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.sql.Date;
 
@@ -18,15 +21,10 @@ public class Cart {
     @Column(name = "id", nullable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "price")
-    private Float price;
-
-    @Column(name = "short_description")
-    private String shortDesc;
+    
+    @OneToOne
+    @JoinColumn(name = "catalogue_id", referencedColumnName = "id")
+    private Catalogue item;    
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -45,30 +43,6 @@ public class Cart {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Float getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(Float price) {
-        this.price = price;
-    }
-
-    public String getShortDesc() {
-        return this.shortDesc;
-    }
-
-    public void setShortDesc(String shortDesc) {
-        this.shortDesc = shortDesc;
     }
 
     public Integer getQuantity() {
@@ -94,4 +68,13 @@ public class Cart {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public Catalogue getItem() {
+        return this.item;
+    }
+
+    public void setItem(Catalogue item) {
+        this.item = item;
+    }
+
 }
