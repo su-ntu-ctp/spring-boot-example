@@ -1,6 +1,7 @@
-package com.skillsunion.projectexample.entity;
+package com.skillsunion.shoppingcartapi.entity;
 
-import javax.persistence.CascadeType;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.sql.Date;
 
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,7 +17,7 @@ import org.springframework.data.annotation.CreatedDate;
 @Entity
 @Table(name = "cart", schema = "public")
 public class Cart {
-    @Id
+	@Id
     @Column(name = "id", nullable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -76,5 +76,4 @@ public class Cart {
     public void setItem(Catalogue item) {
         this.item = item;
     }
-
 }

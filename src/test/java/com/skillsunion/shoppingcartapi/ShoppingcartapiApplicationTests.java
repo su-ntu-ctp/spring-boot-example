@@ -1,10 +1,10 @@
-package com.skillsunion.projectexample;
+package com.skillsunion.shoppingcartapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjectExampleApplicationTests {
+class ShoppingcartapiApplicationTests {
 
 	@Test
 	void contextLoads() {

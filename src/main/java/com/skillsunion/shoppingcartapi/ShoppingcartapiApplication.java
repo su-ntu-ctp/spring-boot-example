@@ -1,13 +1,13 @@
-package com.skillsunion.projectexample;
+package com.skillsunion.shoppingcartapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjectExampleApplication {
+public class ShoppingcartapiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectExampleApplication.class, args);
+		SpringApplication.run(ShoppingcartapiApplication.class, args);
 	}
 
 }
